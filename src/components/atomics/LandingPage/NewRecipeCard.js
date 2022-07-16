@@ -7,13 +7,13 @@ function NewRecipeCard(props) {
 
   return (
     <Card
+      crossorigin="anonymous"
       className="user-myrecipe"
       style={{
         boxShadow: '5px 5px 3px #9E9E9E',
-        backgroundImageCrossOrigin: 'anonymous',
-        backgroundImage: recipePicture
-          ? `url('https://letscookin-app.herokuapp.com/${recipePicture.replace(/\\/g, '/')}')`
-          : 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSkrPvh4qinHIBymIlTWZmqNASg5AfZrldQ&usqp=CAU")',
+        // backgroundImage: recipePicture
+        //   ? `url('https://letscookin-app.herokuapp.com/${recipePicture.replace(/\\/g, '/')}')`
+        //   : 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSkrPvh4qinHIBymIlTWZmqNASg5AfZrldQ&usqp=CAU")',
         cursor: 'pointer',
       }}
       key={id}
@@ -22,6 +22,7 @@ function NewRecipeCard(props) {
         window.location.href = '/detail-recipe';
       }}
     >
+      <img src={`https://letscookin-app.herokuapp.com/${recipePicture.replace(/\\/g, '/')}`} alt="recipe_picture" />
       <Card.Footer className="mt-auto " style={{ borderTop: '0px', backgroundColor: 'rgba(0,0,0,0.4)' }}>
         <h5 style={{ color: recipePicture ? 'white' : 'black' }}>{title}</h5>
       </Card.Footer>
