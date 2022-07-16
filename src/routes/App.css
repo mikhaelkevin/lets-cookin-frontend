@@ -1,0 +1,134 @@
+.App {
+  background-color: #1c1e21;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.login-text-center{
+  text-align: center;
+}
+
+.login-split-left{
+  background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700654038.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 50vh;
+  min-height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.color-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(254,193,7,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-split-right{
+background-color: #f5f5f5;
+min-width: 50vh;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.auth-link{
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nav-menu{
+  font-size: 20px;
+  text-decoration: none;
+  color: 'white';
+}
+
+.nav-menu:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+.theme-color{
+  color: #fec107;
+}
+
+img.nav-user-pic{
+  width: 92px;
+  height: 68px;
+  border-radius: 50%;
+}
+
+.user-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-myrecipe{
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+}
+
+.detail-recipe-title{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 54px;
+    font-weight: 500;
+}
+
+.detail-recipe-img{
+    max-width: 1080px;
+    max-height: 540px;
+    border-radius: 15px;
+}
+
+.detail-recipe-sub-title{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.recipe-ingredients-list{
+    font-weight: 300;
+    font-size: 25px;
+    height: 47px;
+}
+
+.detail-recipe-commentsBox{
+    background-color: #F6F5F4;
+    width: 100%;
+    height: 150px;
+}
+
+.lp-new-recipe{
+  background-color: rgba(173, 181, 189, 0.1);
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-top: 30px;
+}
+
+.my-recipe-style{
+  padding: 17px 30px 75px 30px;
+   background-color: rgba(173,181, 189, 0.1);
+}
+
+.ar-form{
+  border-radius: 15px;
+  background-color: rgba(173, 181, 189, 0.1);
+}
+
+.lp-main-item{
+  cursor: pointer;
+  box-shadow: 5px 5px 3px #9E9E9E;
+  width: 227px;
+  height: 291px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0px;
+}
