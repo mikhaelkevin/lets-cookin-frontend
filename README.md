@@ -4,17 +4,17 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="https://res.cloudinary.com/nocturncloud/image/upload/v1662178841/lets-cookin-app/README/Logo_sblbto.png" alt="Logo" width="500px">
+    <img src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411403/temp-lets-cookin/Landing_vdys1a.png" alt="Logo" width="400px">
   </a>
 
   <h3 align="center">Let's Cookin!</h3>
 
   <p align="center">
-    <a href="#">View Demo</a>
+    <a href="https://letscookin-app.web.app/">View Demo</a>
     ·
-    <a href="https://github.com/mikhaelkevin/fe-lets-cookin-app/issues">Report Bug</a>
+    <a href="https://github.com/mikhaelkevin/lets-cookin-frontend/issues">Report Bug</a>
     ·
-    <a href="https://github.com/mikhaelkevin/fe-lets-cookin-app/issues">Request Feature</a>
+    <a href="https://github.com/mikhaelkevin/lets-cookin-frontend/issues">Request Feature</a>
   </p>
 </div>
 
@@ -36,7 +36,6 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#setup-env-example">Setup .env example</a></li>
       </ul>
     </li>
     <li><a href="#screenshoots">Screenshots</a></li>
@@ -62,7 +61,6 @@ This app was built with some technologies below:
 - [Javascript](https://www.javascript.com/)
 - [React](https://reactjs.org/)
 - [Axios](https://axios-http.com/)
-- [React Redux](https://react-redux.js.org/introduction/getting-started)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -85,13 +83,13 @@ If you want to run this project locally, I recommend you to configure the [back-
 - Clone the repo
 
 ```
-git clone https://github.com/mikhaelkevin/fe-lets-cookin-app.git
+git clone https://github.com/mikhaelkevin/lets-cookin-frontend.git
 ```
 
 - Go To Folder Repo
 
 ```
-cd fe-lets-cookin-app
+cd lets-cookin-frontend
 ```
 
 - Install Module
@@ -106,18 +104,6 @@ npm install
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Setup .env example
-
-Create .env file in your root project folder.
-
-```
-###### = ######
-###### = ######
-###### = ######
-```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Screenshots
 
 <p align="center" display=flex>
@@ -128,40 +114,32 @@ Create .env file in your root project folder.
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Register Page</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662179683/lets-cookin-app/README/Login_kymhcv.png" alt="login" width=100%></td>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662179788/lets-cookin-app/README/Register_a3uuto.png" alt ="register" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411389/temp-lets-cookin/Login_uusdje.png" alt="login" width=100%></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411392/temp-lets-cookin/Register_vfkseu.png" alt ="register" width=100%/></td>
   </tr>
    <tr>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Landing Page</td>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Detail Recipe</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662179885/lets-cookin-app/README/Landing_Page_bp6gpj.png" alt="landing-page" width=100%></td>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662180427/lets-cookin-app/README/Detail_Recipe_onvcov.png" alt="detail-recipe" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411403/temp-lets-cookin/Landing_vdys1a.png" alt="landing-page" width=100%></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411388/temp-lets-cookin/Detail_Recipe_z1ir3s.png" alt="detail-recipe" width=100%/></td>
   </tr>
   <tr>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>New Recipe</td>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Edit Recipe</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662180545/lets-cookin-app/README/New_Recipe_npyan5.png" alt="new-recipe" width=100%></td>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662180630/lets-cookin-app/README/Edit_Recipe_zne7zy.png" alt="edit-recipe" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411386/temp-lets-cookin/Add_Recipe_umu6av.png" alt="new-recipe" width=100%></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411386/temp-lets-cookin/Edit_Recipe_hc1mdo.png" alt="edit-recipe" width=100%/></td>
   </tr>
   <tr>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Profile</td>
     <td style='text-align: center; background-color: #6661; font-weight: 600'>Edit Profile</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662180705/lets-cookin-app/README/Profile_h94qhh.png" alt="profile" width=100%></td>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662289239/lets-cookin-app/README/Edit_Profile_l7bd4y.png" alt="profile" width=100%></td>
-  </tr>
-  <tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Change password</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Delete recipe</td>
-  </tr>
-  <tr>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662289349/lets-cookin-app/README/Change_Password_edcwss.png" alt="profile" width=100%></td>
-    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662289487/lets-cookin-app/README/Delete_Recipe_y5oyj2.png" alt="profile" width=100%></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411386/temp-lets-cookin/Profile_hrjd5d.png" alt="profile" width=100%></td>
+    <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662411386/temp-lets-cookin/Edit_Profile_g7egtg.png" alt="edit-profile" width=100%></td>
   </tr>
 </table>
       
@@ -192,22 +170,22 @@ Contributions are what make the open source community such an amazing place to b
     </tr>
     <tr>
     <td>
-    <a href="https://github.com/mikhaelkevin/lets-cookin-backend"> 
+    <a href="https://github.com/mikhaelkevin/lets-cookin-backend/tree/hotfix-update"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="be-github"/>
     </a>
     </td>
     <td> 
-    <a href="https://github.com/mikhaelkevin/fe-lets-cookin-app"> 
+    <a href="https://github.com/mikhaelkevin/lets-cookin-frontend"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="fe-github">
     <a/>
     </td>
     <td> 
-    <a href="#"> 
+    <a href="https://letscookin-app.herokuapp.com/"> 
     <img src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white" alt="web-services">
     <a/>
     </td>
     <td> 
-    <a href="#"> 
+    <a href="https://letscookin-app.web.app/"> 
     <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white" alt="demo">
     <a/>
     </td>
