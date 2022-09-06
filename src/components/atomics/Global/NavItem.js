@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function NavItem(props) {
   const { endPoint, menuName } = props;
   return (
-    <Navbar.Brand className="mx-5">
+    <Navbar.Brand className="d-flex justify-content-start mx-3 mx-md-5 ">
       <Link to={'/'.concat(endPoint)} style={{ color: 'white', textDecoration: 'none' }} className="nav-menu">{menuName}</Link>
     </Navbar.Brand>
   );

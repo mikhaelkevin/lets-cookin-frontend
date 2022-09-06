@@ -11,11 +11,11 @@ function GlobalFooter() {
         bottom: '0',
         width: '100%',
         height: '50px',
-        // marginTop: '75px',
         backgroundColor: '#fec107',
+        fontFamily: 'Inter',
       }}
     >
-      <Stack direction="horizontal" gap={5}>
+      <Stack direction="horizontal" className="gap-3 gap-md-5">
         <FooterItem text="Product" />
         <FooterItem text="Company" />
         <FooterItem text="Learn More" />

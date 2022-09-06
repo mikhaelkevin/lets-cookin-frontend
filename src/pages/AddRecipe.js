@@ -58,7 +58,7 @@ function AddRecipe() {
   };
 
   return (
-    <div className="App d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+    <div className="App d-flex justify-content-center align-items-center py-3" style={{ height: '100vh' }}>
       <Form className="w-50 text-light p-5 ar-form" onSubmit={(e) => e.preventDefault()}>
         <h3 className="text-center mb-5">New Recipe</h3>
         {formIsError && <Alert variant="danger" className="text-center">{formErrMessage}</Alert>}
@@ -72,12 +72,14 @@ function AddRecipe() {
         <InputBox
           formGroupClass="mb-4"
           labelText="Title"
+          formControlPHolder="Title"
           changeAction={((e) => setRecipeTitle(e.target.value))}
           isRequired
         />
         <InputBox
           formGroupClass="mb-4"
           labelText="Ingredients"
+          formControlPHolder="ex: Egg, Mayo, Salt"
           changeAction={((e) => setRecipeIngredients(e.target.value))}
           isRequired
         />
