@@ -37,7 +37,7 @@ function MyRecipe() {
             recipeId={value.id}
             imageUrl={value?.recipe_picture
               ? value?.recipe_picture
-              : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSkrPvh4qinHIBymIlTWZmqNASg5AfZrldQ&usqp=CAU'}
+              : 'https://res.cloudinary.com/nocturncloud/image/upload/v1662443263/blank-image_nv8gi8.png'}
             recipeTitle={value?.title ?? null}
             textColor={value?.recipe_picture ? 'white' : 'black'}
             clickOption={() => {

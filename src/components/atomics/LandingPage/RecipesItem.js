@@ -1,24 +1,24 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 function RecipesItem(props) {
   const { recipesData: { id, title } } = props;
   const { recipesData: { recipe_picture: recipePicture } } = props;
+  const navigate = useNavigate();
 
   return (
     <Card
       crossOrigin="anonymous"
       className="lp-main-item"
       style={{
-        backgroundImage: recipePicture
-          ? `url('https://letscookin-app.herokuapp.com/${recipePicture.replace(/\\/g, '/')}')`
-          : 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSkrPvh4qinHIBymIlTWZmqNASg5AfZrldQ&usqp=CAU")',
+        backgroundImage: `url('${recipePicture || 'https://res.cloudinary.com/nocturncloud/image/upload/v1662443263/blank-image_nv8gi8.png'}')`,
       }}
       key={id}
       onClick={() => {
         localStorage.setItem('detailRecipeId', id);
-        window.location.href = '/detail-recipe';
+        navigate('/detail-recipe');
       }}
     >
 

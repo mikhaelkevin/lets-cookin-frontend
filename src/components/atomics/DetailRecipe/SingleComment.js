@@ -8,9 +8,7 @@ function SingleComment(props) {
     <Row className="mt-2 pb-2">
       <Col className="col-1 d-flex justify-content-start">
         <img
-          src={avatar
-            ? `https://letscookin-app.herokuapp.com/${avatar.replace(/\\/g, '/')}`
-            : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
+          src={avatar || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
           alt="user_avatar"
           style={{
             width: '75px',
