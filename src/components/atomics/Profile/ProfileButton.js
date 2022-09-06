@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 function ProfileButton(props) {
   const {
@@ -9,10 +8,8 @@ function ProfileButton(props) {
   } = props;
   return (
     <Row className="mt-2 d-flex justify-content-center">
-      <Button style={{ width: '15vw' }} variant={variant} onClick={clickOpt} disabled={disabledOption}>
-        <Link to="/edit-profile" style={{ textDecoration: 'none', color: 'black', fontWeight: '500' }}>
-          {textOption}
-        </Link>
+      <Button style={{ width: '15vw', color: 'black', fontWeight: '500' }} variant={variant} onClick={clickOpt} disabled={disabledOption}>
+        {textOption}
       </Button>
     </Row>
   );

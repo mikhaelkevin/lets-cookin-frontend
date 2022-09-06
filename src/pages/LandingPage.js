@@ -90,11 +90,14 @@ function LandingPage() {
           </Col>
           ) }
 
-          {newRecipe?.map((value) => (
-            <Col className="col-2 mt-3 mx-3">
-              <NewRecipeCard dataNewRecipe={value} />
-            </Col>
-          ))}
+          {newRecipe?.map((value, index) => {
+            const newRecipeKey = index + 1;
+            return (
+              <Col className="col-2 mt-3 mx-3" key={newRecipeKey}>
+                <NewRecipeCard dataNewRecipe={value} />
+              </Col>
+            );
+          })}
 
         </Row>
       </Row>
@@ -125,17 +128,23 @@ function LandingPage() {
         </Col>
         ) }
 
-        {(searchingValue && !isError) && searchingResult.map((value) => (
-          <Col className="col-3 mb-5  d-flex justify-content-center">
-            <RecipesItem recipesData={value} />
-          </Col>
-        ))}
+        {(searchingValue && !isError) && searchingResult.map((value, index) => {
+          const searchKey = index + 1;
+          return (
+            <Col className="col-3 mb-5  d-flex justify-content-center" key={searchKey}>
+              <RecipesItem recipesData={value} />
+            </Col>
+          );
+        })}
 
-        {(!searchingValue && !isError) && recipes?.map((value) => (
-          <Col className="col-3 mb-5  d-flex justify-content-center">
-            <RecipesItem recipesData={value} />
-          </Col>
-        ))}
+        {(!searchingValue && !isError) && recipes?.map((value, key) => {
+          const recipeKey = key + 1;
+          return (
+            <Col className="col-3 mb-5  d-flex justify-content-center" key={recipeKey}>
+              <RecipesItem recipesData={value} />
+            </Col>
+          );
+        })}
 
       </Row>
     </Container>

@@ -87,6 +87,8 @@ img.nav-user-pic{
     max-width: 1080px;
     max-height: 540px;
     border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .detail-recipe-sub-title{
@@ -130,5 +132,18 @@ img.nav-user-pic{
   height: 291px;
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
+  object-position: center;
   border: 0px;
+}
+
+.lazyLoad{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1e21;
+  color: white;
 }

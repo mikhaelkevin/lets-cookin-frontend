@@ -9,9 +9,7 @@ function AvatarAndButtons(props) {
     <>
       <Row className="d-flex justify-content-center pt-5">
         <img
-          src={avatar
-            ? `https://letscookin-app.herokuapp.com/${avatar.replace(/\\/g, '/')}`
-            : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
+          src={avatar || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
           alt="user-pic"
           style={{ width: '174px', height: '150px', borderRadius: '50%' }}
         />

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Alert, Form } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import GlobalButton from '../../atomics/Global/GlobalButton';
 import RRegisterInputBox from '../../moleculs/Auth/RRegisterInputBox';
 
 function RRegisterForm() {
+  const navigate = useNavigate();
   React.useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.href = '/';
+      navigate('/');
     }
   }, []);
 

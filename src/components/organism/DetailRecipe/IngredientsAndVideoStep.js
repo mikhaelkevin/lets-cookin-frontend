@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import SubTitle from '../../atomics/DetailRecipe/SubTitle';
 import IngredientsList from '../../moleculs/DetailRecipe/IngredientsList';
-import VideoStepButton from '../../moleculs/DetailRecipe/VideoStepButton';
+// import VideoStepButton from '../../moleculs/DetailRecipe/VideoStepButton';
 
 function IngredientsAndVideoStep(props) {
   // video feature comin soon
@@ -15,8 +15,8 @@ function IngredientsAndVideoStep(props) {
         <IngredientsList item={ingredients} />
       </Col>
       <Col>
-        <SubTitle title="Video Step" />
-        <VideoStepButton />
+        {/* <SubTitle title="Video Step" /> */}
+        {/* <VideoStepButton /> */}
       </Col>
     </Row>
   );
@@ -27,6 +27,6 @@ IngredientsAndVideoStep.propTypes = {
 };
 
 IngredientsAndVideoStep.defaultProps = {
-  ingredients: 'video not found' || ['empty'],
+  ingredients: 'ingredients not found' || ['empty'],
 };
 export default IngredientsAndVideoStep;

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import InputBox from '../../moleculs/Auth/InputBox';
 import GlobalButton from '../../atomics/Global/GlobalButton';
 
 function RLoginForm() {
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -15,7 +17,7 @@ function RLoginForm() {
 
   React.useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.href = '/';
+      navigate('/');
     }
   }, []);
 

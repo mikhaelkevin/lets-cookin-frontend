@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { lazy, useEffect } from 'react';
 import {
   Container, Form, Alert, Row,
 } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import ProfileContext from './Context';
 import GlobalButton from '../components/atomics/Global/GlobalButton';
-import RecipeNameAndImage from '../components/moleculs/DetailRecipe/RecipeNameAndImage';
 import UserComments from '../components/moleculs/DetailRecipe/UserComments';
-import IngredientsAndVideoStep from '../components/organism/DetailRecipe/IngredientsAndVideoStep';
+
+const RecipeNameAndImage = lazy(() => import('../components/moleculs/DetailRecipe/RecipeNameAndImage'));
+const IngredientsAndVideoStep = lazy(() => import('../components/organism/DetailRecipe/IngredientsAndVideoStep'));
+// import IngredientsAndVideoStep from
+// '../components/organism/DetailRecipe/IngredientsAndVideoStep';
 
 function DetailRecipe() {
+  const navigate = useNavigate();
   const userInformation = React.useContext(ProfileContext);
   const recipeId = localStorage.getItem('detailRecipeId');
   const [detailRecipe, setDetailRecipe] = React.useState([]);
@@ -32,7 +37,7 @@ function DetailRecipe() {
 
   React.useEffect(() => {
     if (!localStorage.getItem('detailRecipeId')) {
-      window.location.href = '/';
+      navigate('/');
     }
   }, []);
 
@@ -59,13 +64,13 @@ function DetailRecipe() {
           authorId={detailRecipe?.user_id}
           author={detailRecipe?.author}
           title={detailRecipe?.title}
-          imgUrl={detailRecipe?.recipe_picture
-            && detailRecipe?.recipe_picture}
+          imgUrl={detailRecipe?.recipe_picture}
         />
         <IngredientsAndVideoStep
           ingredients={detailRecipe.ingredients}
           videos={detailRecipe.recipe_video}
         />
+
         {userInformation.id === detailRecipe.user_id ? null : (
           <Form className="mb-5" onSubmit={(e) => e.preventDefault()}>
             <div className="form-group">

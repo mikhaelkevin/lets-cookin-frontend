@@ -95,15 +95,18 @@ function EditRecipe() {
           changeAction={(e) => setNewPicture(e.target.files[0])}
         />
 
-        <Form.Group className="mb-4">
+        {/* <Form.Group className="mb-4">
           <Form.Label>Step Videos</Form.Label>
           <Form.Control
             type="file"
             multiple
             disabled
           />
-          <h6 style={{ fontStyle: 'italic' }}>*Note: When you want upload a multiple step videos. Make sure you select the video by order</h6>
-        </Form.Group>
+          <h6 style={{ fontStyle: 'italic' }}>
+            *Note: When you want upload a multiple step videos.
+            Make sure you select the video by order
+          </h6>
+        </Form.Group> */}
         <Row className="d-flex justify-content-center">
           <GlobalButton buttonClass="w-25" clickAction={uploadNewRecipe}>Submit</GlobalButton>
         </Row>

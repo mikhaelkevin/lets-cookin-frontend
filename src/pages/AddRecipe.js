@@ -14,7 +14,7 @@ function AddRecipe() {
   const [recipeTitle, setRecipeTitle] = React.useState('');
   const [recipeIngredients, setRecipeIngredients] = React.useState('');
   const [recipePicture, setRecipePicture] = React.useState({});
-  const [recipeStepVideos, setRecipeStepVideos] = React.useState({});
+  // const [recipeStepVideos, setRecipeStepVideos] = React.useState({});
 
   const [formIsError, setFormIsError] = React.useState(false);
   const [formErrMessage, setFormErrMessage] = React.useState('');
@@ -22,8 +22,10 @@ function AddRecipe() {
   const [successAdd, setSuccessAdd] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState('');
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const uploadNewRecipe = () => {
-    setSuccessAdd(false);
+    setIsLoading(true);
     setFormIsError(false);
     const formData = new FormData();
     formData.append('title', recipeTitle);
@@ -32,9 +34,9 @@ function AddRecipe() {
     formData.append('userId', userInformation.id);
 
     // eslint-disable-next-line
-    for (let i = 0; i < recipeStepVideos.length; i++) {
-      formData.append('recipeVideo', recipeStepVideos[i]);
-    }
+    // for (let i = 0; i < recipeStepVideos.length; i++) {
+    //   formData.append('recipeVideo', recipeStepVideos[i]);
+    // }
 
     axios.post('https://letscookin-app.herokuapp.com/letscookinapps/recipes/', formData, {
       headers: {
@@ -49,6 +51,7 @@ function AddRecipe() {
         }, 3000);
       })
       .catch((err) => {
+        setIsLoading(false);
         setFormIsError(true);
         setFormErrMessage(err.response.data.message);
       });
@@ -85,7 +88,7 @@ function AddRecipe() {
           changeAction={(e) => setRecipePicture(e.target.files[0])}
         />
 
-        <Form.Group className="mb-4">
+        {/* <Form.Group className="mb-4">
           <Form.Label>Step Videos</Form.Label>
           <Form.Control
             type="file"
@@ -93,10 +96,13 @@ function AddRecipe() {
             onChange={(e) => setRecipeStepVideos(e.target.files)}
             disabled
           />
-          <h6 style={{ fontStyle: 'italic' }}>*Note: When you want upload a multiple step videos. Make sure you select the video by order</h6>
-        </Form.Group>
+          <h6 style={{ fontStyle: 'italic' }}>
+            *Note: When you want upload a multiple step videos.
+            Make sure you select the video by order
+          </h6>
+        </Form.Group> */}
         <Row className="d-flex justify-content-center">
-          <GlobalButton buttonClass="w-25" clickAction={uploadNewRecipe} disabledOpt={successAdd}>Submit</GlobalButton>
+          <GlobalButton buttonClass="w-25" clickAction={uploadNewRecipe} disabledOpt={isLoading}>Submit</GlobalButton>
         </Row>
 
       </Form>

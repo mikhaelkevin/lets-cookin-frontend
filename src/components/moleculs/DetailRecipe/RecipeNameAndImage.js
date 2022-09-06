@@ -9,8 +9,6 @@ function RecipeNameAndImage(props) {
     title, imgUrl, authorId,
   } = props;
   const { author } = props;
-
-  const newImgUrl = imgUrl;
   return (
     <>
       <p className="detail-recipe-title" style={{ color: 'white' }}>
@@ -19,9 +17,7 @@ function RecipeNameAndImage(props) {
       <h3 className="mb-4" style={{ paddingLeft: '120px' }}>{authorId === userInformation.id ? 'Author: You' : `Author: ${author}` }</h3>
       <Row className="d-flex justify-content-center mb-5">
         <img
-          src={imgUrl
-            ? `https://letscookin-app.herokuapp.com/${newImgUrl.replace(/\\/g, '/')}`
-            : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSkrPvh4qinHIBymIlTWZmqNASg5AfZrldQ&usqp=CAU'}
+          src={imgUrl || 'https://res.cloudinary.com/nocturncloud/image/upload/v1662443263/blank-image_nv8gi8.png'}
           alt="recipe_picture"
           className="detail-recipe-img"
         />
@@ -39,7 +35,7 @@ RecipeNameAndImage.propTypes = {
 
 RecipeNameAndImage.defaultProps = {
   title: 'unknown title',
-  imgUrl: 'unknown image',
+  imgUrl: 'https://res.cloudinary.com/nocturncloud/image/upload/v1662443263/blank-image_nv8gi8.png',
   author: 'unknown author',
   authorId: 0,
 };

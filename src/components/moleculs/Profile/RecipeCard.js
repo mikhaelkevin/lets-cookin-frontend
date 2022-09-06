@@ -32,7 +32,7 @@ function RecipeCard(props) {
         className="user-myrecipe"
         style={{
           boxShadow: '5px 5px 3px #9E9E9E',
-          backgroundImage: `url('https://letscookin-app.herokuapp.com/${imageUrl.replace(/\\/g, '/')}')`,
+          backgroundImage: `url('${imageUrl}')`,
         }}
       >
         <Card.Header className="d-flex justify-content-end" style={{ borderTop: '0px', backgroundColor: 'rgba(0,0,0,0.4)' }}>

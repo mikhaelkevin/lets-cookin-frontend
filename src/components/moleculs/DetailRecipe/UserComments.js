@@ -16,13 +16,17 @@ function UserComments(props) {
           </h2>
         </Row>
       )
-        : commentData?.map((value) => ((
-          <SingleComment
-            avatar={value?.profile_picture ? value?.profile_picture : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
-            userName={value?.name ? value?.name : null}
-            comment={value?.comment ? value?.comment : null}
-          />
-        )))}
+        : commentData?.map((value, index) => {
+          const commentKey = index + 1;
+          return (
+            <SingleComment
+              avatar={value?.profile_picture ? value?.profile_picture : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2IRUIqIOAKar3LaLJely1iMXS4HFfouBrg&usqp=CAU'}
+              userName={value?.name ? value?.name : null}
+              comment={value?.comment ? value?.comment : null}
+              key={commentKey}
+            />
+          );
+        })}
     </div>
   );
 }
