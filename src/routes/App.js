@@ -10,13 +10,14 @@ import GlobalFooter from '../components/organism/Global/GlobalFooter';
 import NotFound from '../pages/NotFound';
 import AddRecipe from '../pages/AddRecipe';
 import Profile from '../pages/Profile';
-import DetailRecipe from '../pages/DetailRecipe';
+// import DetailRecipe from '../pages/DetailRecipe';
 import EditProfile from '../pages/EditProfile';
 import EditRecipe from '../pages/EditRecipe';
 import Loader from '../components/atomics/Global/Loader';
 import ErrorBoundary from '../components/atomics/Global/ErrorBoundary';
 
 const LandingPage = lazy(() => import('../pages/LandingPage'));
+const DetailRecipe = lazy(() => import('../pages/DetailRecipe'));
 
 export default function App() {
   const navigate = useNavigate();
@@ -50,8 +51,17 @@ export default function App() {
             )}
           />
           <Route path="add-recipe" element={<AddRecipe />} />
+          <Route
+            path="detail-recipe"
+            element={(
+              <ErrorBoundary>
+                <Suspense fallback={<Loader />}>
+                  <DetailRecipe />
+                </Suspense>
+              </ErrorBoundary>
+            )}
+          />
           <Route path="profile" element={<Profile />} />
-          <Route path="detail-recipe" element={<DetailRecipe />} />
           <Route path="edit-profile" element={<EditProfile />} />
           <Route path="edit-recipe" element={<EditRecipe />} />
           <Route path="*" element={<NotFound />} />
