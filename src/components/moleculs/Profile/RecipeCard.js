@@ -27,7 +27,7 @@ function RecipeCard(props) {
   }, [doDeleteRecipe]);
 
   return (
-    <Col className="col-2 mt-3">
+    <Col className="col-12 col-md-5 col-xl-2 mt-3">
       <Card
         className="user-myrecipe"
         style={{

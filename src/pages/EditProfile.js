@@ -25,6 +25,8 @@ function EditProfile() {
   const [errorMsg, setErrorMsg] = React.useState('')
   /* eslint-enable */
 
+  const currentUser = JSON.parse(localStorage?.getItem('userInformation'));
+
   const uploadNewProfile = () => {
     setUpdateSuccess(false);
     setIsError(false);
@@ -37,6 +39,16 @@ function EditProfile() {
 
     axios.patch('https://letscookin-app.herokuapp.com/letscookinapps/users', formData)
       .then((res) => {
+        const newData = {
+          id: currentUser?.id,
+          name: newName || currentUser?.name,
+          email: newEmail || currentUser?.email,
+          phonenumber: newPhonenumber || currentUser?.phonenumber,
+          profile_picture: currentUser?.profile_picture,
+          password: null,
+        };
+
+        localStorage?.setItem('userInformation', JSON.stringify(newData));
         setUpdateSuccess(true);
         setUpdateSuccessMsg(res.data.message);
       })

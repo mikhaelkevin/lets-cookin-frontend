@@ -79,7 +79,7 @@ function LandingPage() {
       <Row className="mb-5">
         <CarouselLandingPage />
       </Row>
-      <h1 className="text-center mb-5 text-light">ITS TIME TO COOKIN!</h1>
+      <h1 className="text-center mb-5 text-light lp-title">ITS TIME TO COOKIN!</h1>
       <Row className="lp-new-recipe">
         <h4 className="text-light">New Added Recipe</h4>
         <Row className="my-3 d-flex justify-content-center">
@@ -93,7 +93,7 @@ function LandingPage() {
           {newRecipe?.map((value, index) => {
             const newRecipeKey = index + 1;
             return (
-              <Col className="col-2 mt-3 mx-3" key={newRecipeKey}>
+              <Col className="col-12 col-md-5 col-xl-2 m-3" key={newRecipeKey}>
                 <NewRecipeCard dataNewRecipe={value} />
               </Col>
             );
@@ -101,7 +101,7 @@ function LandingPage() {
 
         </Row>
       </Row>
-      <div className="input-group d-flex justify-content-end" style={{ paddingRight: '100px' }}>
+      <div className="input-group d-flex justify-content-end searchBar" style={{ paddingRight: '100px' }}>
         <div className="form-outline">
           <input
             type="search"
@@ -131,7 +131,7 @@ function LandingPage() {
         {(searchingValue && !isError) && searchingResult.map((value, index) => {
           const searchKey = index + 1;
           return (
-            <Col className="col-3 mb-5  d-flex justify-content-center" key={searchKey}>
+            <Col className="col-12 col-md-3 mb-5  d-flex justify-content-center lp-recipe-list" key={searchKey}>
               <RecipesItem recipesData={value} />
             </Col>
           );
@@ -140,7 +140,7 @@ function LandingPage() {
         {(!searchingValue && !isError) && recipes?.map((value, key) => {
           const recipeKey = key + 1;
           return (
-            <Col className="col-3 mb-5  d-flex justify-content-center" key={recipeKey}>
+            <Col className="col-12 col-md-3 mb-5  d-flex justify-content-center lp-recipe-list" key={recipeKey}>
               <RecipesItem recipesData={value} />
             </Col>
           );

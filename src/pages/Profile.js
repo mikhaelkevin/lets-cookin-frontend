@@ -12,8 +12,8 @@ function Profile() {
   const userInformation = React.useContext(ProfileContext);
 
   return (
-    <Container fluid style={{ backgroundColor: '#1c1e21' }} className="text-light">
-      <h1 className="text-center p-5">
+    <Container fluid style={{ backgroundColor: '#1c1e21' }} className="text-light profilePage">
+      <h1 className="text-center">
         Hello,
         {' '}
         {userInformation?.name}

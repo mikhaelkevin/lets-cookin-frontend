@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Air BNB Cereal";
+  src: local("Air BNB Cereal"), url("./styles/fonts/AirBNB/AirbnbCereal.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url("./styles/fonts/Inter/Inter-Regular.otf") format("opentype")
+}

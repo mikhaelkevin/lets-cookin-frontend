@@ -19,17 +19,30 @@
   color: white;
 }
 
+.login-split-left img{
+  width: 40%;
+  margin-bottom: 1rem;
+}
+
 .color-overlay{
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(254,193,7,0.2);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.color-overlay span{
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Inter';
+}
+
 .login-split-right{
+font-family: 'Air BNB Cereal';
 background-color: #f5f5f5;
 min-width: 50vh;
 min-height: 100vh;
@@ -44,7 +57,8 @@ align-items: center;
 }
 
 .nav-menu{
-  font-size: 20px;
+  font-family: 'Air BNB Cereal';
+  font-size: 1.3rem;
   text-decoration: none;
   color: 'white';
 }
@@ -113,6 +127,11 @@ img.nav-user-pic{
   padding-bottom: 50px;
   margin-bottom: 50px;
   padding-top: 30px;
+  font-family: 'Air BNB Cereal';
+}
+
+.lp-recipe-list{
+  font-family: 'Air BNB Cereal';
 }
 
 .my-recipe-style{
@@ -146,4 +165,257 @@ img.nav-user-pic{
   align-items: center;
   background-color: #1c1e21;
   color: white;
+}
+
+.login-split-right .row h3 {
+  font-size: 2rem;
+}
+
+.login-split-right p,
+.login-split-right a {
+  font-size: 1.2rem !important;
+}
+
+.login-split-right label,
+.login-split-right input,
+.login-split-right button,
+.login-split-right a {
+  font-size: 1.2rem !important;
+}
+
+.lp-title{
+  font-family: 'Air BNB Cereal';
+  font-size: 2rem;
+}
+
+.profilePage {
+  font-family: 'Inter';
+}
+
+.profilePage h1 {
+  padding-top: 1rem;
+}
+
+.profilePage .profilePicture {
+  margin-top: 2rem;
+}
+
+.ar-form {
+  font-family: 'Air BNB Cereal';
+}
+
+.ar-form h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem !important;
+}
+
+.ar-form input,
+.ar-form button,
+.ar-form label {
+  font-size: 1.3rem;
+}
+
+.profilePage h1 {
+  padding-top: 3rem;
+}
+
+.profilePage .profilePicture {
+  margin-top: 3rem;
+}
+
+.profilePage img {
+  width: 20% !important;
+  height: 20% !important;
+}
+
+.profilePage .userMenus button, .hstack h5 {
+  font-size: 1.3rem;
+}
+
+.user-myrecipe .card-header button {
+  font-size: 1rem !important;
+}
+
+
+/* MEDIA QUERIES BREAKPOINTS */
+/* Phone breakpoints */
+@media only screen and (max-width: 575px) {
+ .login-split-right .row{
+  width: 80% !important;
+ }
+
+.login-split-right .row h3 {
+  font-size: 2rem;
+}
+
+.login-split-right p,
+.login-split-right a {
+  font-size: 1rem !important;
+}
+
+.login-split-right label,
+.login-split-right input, 
+.login-split-right button,
+.login-split-right a {
+  font-size: 1rem !important;
+}
+
+.nav-menu {
+  font-size: 1rem;
+}
+
+.hstack a{
+font-size: 0.8rem !important;
+}
+
+.searchBar {
+  padding-right: 0px !important;
+  justify-content: center !important;
+}
+
+.carousel{
+height: 70vh;
+width: 100vw;
+}
+
+.carousel img{
+width: 100% !important;
+object-fit: contain;
+object-position: center;
+}
+
+.lp-title{
+font-size: 1.5rem;
+}
+
+.ar-form {
+  font-family: 'Air BNB Cereal';
+  padding: 1rem !important;
+  height: 100% !important;
+  width: 95% !important;
+}
+
+.ar-form h3 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem !important;
+}
+
+.ar-form input,
+.ar-form button,
+.ar-form label {
+   font-size: 1rem;
+ }
+
+.ar-form button {
+   width: 95% !important;
+ }
+
+.profilePage h1{
+  padding-top: 1rem;
+}
+
+.profilePage .profilePicture{
+  margin-top: 2rem;
+}
+
+.profilePage img{
+  width: 50% !important;
+  height: 50% !important;
+}
+
+.profilePage .userMenus button{
+  width: 80% !important;
+}
+
+.user-myrecipe .card-header button{
+  font-size: 0.7rem !important;
+}
+}
+
+/* Tablet breakpoints */
+@media only screen and ((min-width: 576px) and (max-width: 1024px)) {
+  .login-split-right .row {
+      width: 60% !important;
+  }
+
+  .login-split-right .row h3{
+    font-size: 2.5rem;
+  }
+
+  .login-split-right p, .login-split-right a{
+    font-size: 1.3rem !important;
+  }
+
+  .login-split-right label, .login-split-right input{
+    font-size: 1.4rem;
+  }
+
+  .ar-form{
+    font-family: 'Air BNB Cereal';
+    width: 80% !important;
+  }
+
+  .ar-form h3{
+    font-size: 2rem;
+  }
+
+  .ar-form input, .ar-form button, .ar-form label{
+    font-size: 1.5rem;
+  }
+
+  .ar-form button{
+    width: 95% !important;
+  }
+
+  .profilePage h1 {
+    padding-top: 1rem;
+  }
+
+  .profilePage .profilePicture {
+    margin-top: 2rem;
+  }
+
+  .profilePage img {
+    width: 30% !important;
+    height: 30% !important;
+  }
+
+  .profilePage .userMenus button {
+    width: 40% !important;
+    font-size: 1.3rem;
+  }
+
+}
+
+/* Laptop breakpoints */
+@media only screen and ((min-width: 1025px) and (max-width: 1440px)) {
+  .login-split-right .row {
+      width: 70% !important;
+  }
+
+    .ar-form {
+      font-family: 'Air BNB Cereal';
+      width: 70% !important;
+    }
+  
+    .ar-form h3 {
+      font-size: 1.7rem;
+    }
+  
+    .ar-form input,
+    .ar-form button,
+    .ar-form label {
+      font-size: 1.3rem;
+    }
+  
+    .ar-form button {
+      width: 95% !important;
+    }
+
+}
+
+@media only screen and (max-width: 1025px) {
+  .login-split-left{
+    display: none;
+  }
 }
