@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import GlobalNavbar from '../components/organism/Global/GlobalNavbar';
 import GlobalFooter from '../components/organism/Global/GlobalFooter';
 
@@ -21,16 +22,15 @@ const DetailRecipe = lazy(() => import('../pages/DetailRecipe'));
 
 export default function App() {
   const navigate = useNavigate();
+  const { token } = useSelector((state) => state?.auth);
   React.useEffect(() => {
-    if (!localStorage.getItem('token')) {
-      navigate('/login');
-    }
-  }, []);
+    if (!token) navigate('/login');
+  }, [token]);
 
   axios.interceptors.request.use((config) => {
     // eslint-disable-next-line
     config.headers = {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      Authorization: `Bearer ${token}`,
     };
     return config;
   }, (error) => Promise.reject(error));
