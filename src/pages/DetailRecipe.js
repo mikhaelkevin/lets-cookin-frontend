@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import ProfileContext from './Context';
+import { useSelector } from 'react-redux';
 import GlobalButton from '../components/atomics/Global/GlobalButton';
 import UserComments from '../components/moleculs/DetailRecipe/UserComments';
 
@@ -15,7 +15,7 @@ const IngredientsAndVideoStep = lazy(() => import('../components/organism/Detail
 
 function DetailRecipe() {
   const navigate = useNavigate();
-  const userInformation = React.useContext(ProfileContext);
+  const userInformation = useSelector((state) => state?.auth?.user);
   const recipeId = localStorage.getItem('detailRecipeId');
   const [detailRecipe, setDetailRecipe] = React.useState([]);
   const [userComment, setUserComment] = React.useState([]);

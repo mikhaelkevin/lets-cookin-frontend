@@ -1,45 +1,34 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Alert } from 'react-bootstrap';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import InputBox from '../../moleculs/Auth/InputBox';
 import GlobalButton from '../../atomics/Global/GlobalButton';
+import { loginThunk } from '../../../redux/features/authSlice';
 
 function RLoginForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state?.auth);
+
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const [isErr, setIsErr] = React.useState(false);
-  const [errMsg, setErrMsg] = React.useState('');
-
-  const [isLoading, setIsLoading] = React.useState(false);
+  const isLoading = useSelector((state) => state?.auth?.isLoading);
+  const isError = useSelector((state) => state?.auth?.error);
 
   React.useEffect(() => {
-    if (localStorage.getItem('token')) {
-      navigate('/');
-    }
-  }, []);
+    if (token) navigate('/');
+  }, [token]);
 
   const loginHandler = () => {
-    setIsLoading(true);
-    axios.post('https://letscookin-app.herokuapp.com/letscookinapps/login', { email, password })
-      .then((res) => {
-        setIsErr(false);
-        localStorage.setItem('token', res.data?.token);
-        localStorage.setItem('userInformation', JSON.stringify(res.data?.user));
-        window.location.reload();
-      })
-      .catch((err) => {
-        setIsErr(true);
-        setErrMsg(err.response.data.message);
-      })
-      .finally(() => setIsLoading(false));
+    dispatch(loginThunk({ email, password }));
   };
 
   return (
     <>
-      {isErr ? <Alert variant="danger">{errMsg}</Alert> : null}
+      {isError ? <Alert variant="danger" className="text-center">{isError}</Alert> : null}
       <InputBox
         formGroupClass="mb-3"
         labelText="E-Mail"

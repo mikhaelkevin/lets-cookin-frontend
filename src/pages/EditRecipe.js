@@ -4,6 +4,7 @@ import {
   Form, Row,
 } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 // Component
 import GlobalButton from '../components/atomics/Global/GlobalButton';
@@ -11,6 +12,8 @@ import InputBox from '../components/moleculs/Auth/InputBox';
 
 function EditRecipe() {
   const recipeId = localStorage.getItem('recipeEditId');
+  const navigate = useNavigate();
+
   const [dataRecipe, setNewDataRecipe] = React.useState([]);
 
   const [newTitle, setNewTitle] = React.useState('');
@@ -21,10 +24,11 @@ function EditRecipe() {
   const [successMsg, setSuccessMsg] = React.useState('');
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     if (!localStorage.getItem('recipeEditId')) {
-      window.location.href = '/profile';
+      navigate('/profile');
     }
   }, []);
 
@@ -40,6 +44,7 @@ function EditRecipe() {
   }, []);
 
   const uploadNewRecipe = () => {
+    setIsLoading(true);
     setIsSuccess(false);
     setIsError(false);
     const formData = new FormData();
@@ -52,10 +57,11 @@ function EditRecipe() {
         setIsSuccess(true);
         setSuccessMsg(res.data.message);
         setTimeout(() => {
-          window.location.href = '/profile';
+          navigate('/profile');
         }, 3000);
       })
       .catch((err) => {
+        setIsLoading(false);
         setIsError(true);
         setErrorMsg(err.response.data.message);
       });
@@ -108,7 +114,7 @@ function EditRecipe() {
           </h6>
         </Form.Group> */}
         <Row className="d-flex justify-content-center">
-          <GlobalButton buttonClass="w-25" clickAction={uploadNewRecipe}>Submit</GlobalButton>
+          <GlobalButton buttonClass="w-25" clickAction={uploadNewRecipe} disabledOpt={isLoading}>Save</GlobalButton>
         </Row>
 
       </Form>
