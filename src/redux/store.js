@@ -16,7 +16,7 @@ const persistConfig = {
   key: 'letscookin',
   storage,
   version: 1,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
