@@ -1,17 +1,22 @@
+/* eslint-disable no-nested-ternary */
 import axios from 'axios';
 import React from 'react';
 import {
   Container, Form, Row, Alert,
 } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import GlobalButton from '../components/atomics/Global/GlobalButton';
 import InputBox from '../components/moleculs/Auth/InputBox';
-import ProfileContext from './Context';
 
 // Import Component
 
 function EditProfile() {
-  const userInformation = React.useContext(ProfileContext);
+  const userInformation = useSelector((state) => state?.user?.credentials);
+  const { id: userId } = useSelector((state) => state?.auth?.user);
+  const navigate = useNavigate();
+
   /* eslint-disable */
   const [newName, setNewName] = React.useState('');
   const [newEmail, setNewEmail] = React.useState('');
@@ -23,15 +28,15 @@ function EditProfile() {
 
   const [isError, setIsError] = React.useState(false)
   const [errorMsg, setErrorMsg] = React.useState('')
+  const [isLoading, setIsLoading] = React.useState(false);
   /* eslint-enable */
 
-  const currentUser = JSON.parse(localStorage?.getItem('userInformation'));
-
-  const uploadNewProfile = () => {
-    setUpdateSuccess(false);
+  const uploadNewProfile = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
     setIsError(false);
     const formData = new FormData();
-    formData.append('id', userInformation.id);
+    formData.append('id', userId);
     formData.append('name', newName);
     formData.append('email', newEmail);
     formData.append('profilePicture', newProfilePicture);
@@ -39,20 +44,12 @@ function EditProfile() {
 
     axios.patch('https://letscookin-app.herokuapp.com/letscookinapps/users', formData)
       .then((res) => {
-        const newData = {
-          id: currentUser?.id,
-          name: newName || currentUser?.name,
-          email: newEmail || currentUser?.email,
-          phonenumber: newPhonenumber || currentUser?.phonenumber,
-          profile_picture: currentUser?.profile_picture,
-          password: null,
-        };
-
-        localStorage?.setItem('userInformation', JSON.stringify(newData));
         setUpdateSuccess(true);
         setUpdateSuccessMsg(res.data.message);
+        setTimeout(() => navigate('/profile'), 3000);
       })
       .catch((err) => {
+        setIsLoading(false);
         setIsError(true);
         setErrorMsg(err.response.data.message);
       });
@@ -66,7 +63,7 @@ function EditProfile() {
         {userInformation?.name}
       </h1>
       <div className="d-flex justify-content-center h-100">
-        <Form className="p-5 w-50 ar-form" onSubmit={(e) => e.preventDefault()}>
+        <Form className="p-5 w-50 ar-form" onSubmit={(e) => uploadNewProfile(e)}>
           {updateSuccess && <Alert variant="success" className="text-center">{updateSuccessMsg}</Alert>}
           {isError && <Alert variant="danger" className="text-center">{errorMsg}</Alert>}
           <InputBox
@@ -105,9 +102,10 @@ function EditProfile() {
               buttonClass="w-25"
               buttonType="submit"
               buttonSize="lg"
-              clickAction={uploadNewProfile}
+              disabledOpt={isLoading}
             >
-              Submit
+              {/* // eslint-disable-next-line no-nested-ternary */}
+              Save
             </GlobalButton>
           </Row>
         </Form>

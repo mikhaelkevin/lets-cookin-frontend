@@ -1,11 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ProfileButton from '../../atomics/Profile/ProfileButton';
+import { doLogout } from '../../../redux/features/authSlice';
 
 function ProfileButtonGroup() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const logout = () => {
-    localStorage.clear();
+    dispatch(doLogout());
     navigate('/login');
   };
 

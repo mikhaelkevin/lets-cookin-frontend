@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Row, Alert, Col } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import RecipeCard from './RecipeCard';
-import ProfileContext from '../../../pages/Context';
 
 function MyRecipe() {
-  const userInformation = React.useContext(ProfileContext);
+  const userInformation = useSelector((state) => state?.auth?.user);
   const [myRecipe, setMyRecipe] = React.useState([]);
 
   const [isError, setIsError] = React.useState(false);

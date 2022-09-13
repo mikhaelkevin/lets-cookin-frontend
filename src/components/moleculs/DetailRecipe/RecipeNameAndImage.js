@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row } from 'react-bootstrap';
-import ProfileContext from '../../../pages/Context';
+import { useSelector } from 'react-redux';
 
 function RecipeNameAndImage(props) {
-  const userInformation = React.useContext(ProfileContext);
+  const userInformation = useSelector((state) => state?.auth?.user);
   const {
     title, imgUrl, authorId,
   } = props;

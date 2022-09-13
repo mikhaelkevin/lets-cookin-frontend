@@ -3,14 +3,14 @@ import {
   Form, Row, Alert,
 } from 'react-bootstrap';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 // Component
 import GlobalButton from '../components/atomics/Global/GlobalButton';
 import InputBox from '../components/moleculs/Auth/InputBox';
-import ProfileContext from './Context';
 
 function AddRecipe() {
-  const userInformation = React.useContext(ProfileContext);
+  const userInformation = useSelector((state) => state?.auth?.user);
   const [recipeTitle, setRecipeTitle] = React.useState('');
   const [recipeIngredients, setRecipeIngredients] = React.useState('');
   const [recipePicture, setRecipePicture] = React.useState({});
